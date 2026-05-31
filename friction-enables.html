@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Friction Enables v1.0 — carbon-silicon.org</title>
+<meta name="description" content="A carbon-silicon doctrine — the resistance encountered in the work is the accounting happening.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#1a1a17; --paper:#FBF7EF; --bone:#F4EFE6; --shade:#E8E1D2;
+    --red:#B8312F; --jade:#2C5F4F; --gold:#9c7e3a;
+    --serif:"Newsreader",Georgia,serif;
+    --mono:"JetBrains Mono",ui-monospace,monospace;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{-webkit-text-size-adjust:100%;scroll-behavior:smooth;}
+  body{
+    background:var(--paper);color:var(--ink);font-family:var(--serif);
+    line-height:1.65;font-size:20px;
+    background-image:radial-gradient(circle at 50% -10%, rgba(156,126,58,.07), transparent 45%);
+  }
+  .wrap{max-width:680px;margin:0 auto;padding:64px 26px 100px;}
+
+  nav.top{font-family:var(--mono);font-size:12px;letter-spacing:.16em;text-transform:uppercase;
+    font-weight:700;display:flex;gap:16px;align-items:center;flex-wrap:wrap;
+    padding-bottom:28px;margin-bottom:34px;border-bottom:1px solid var(--shade);}
+  nav.top a{color:var(--jade);text-decoration:none;opacity:.72;}
+  nav.top a:hover,nav.top a:focus{opacity:1;}
+  nav.top a[aria-current]{color:var(--ink);opacity:1;}
+  nav.top .sep{color:var(--gold);opacity:.55;}
+
+  .kicker{font-family:var(--mono);font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--jade);font-weight:700;margin-bottom:22px;}
+  h1{font-weight:500;font-size:clamp(30px,6vw,44px);line-height:1.1;letter-spacing:-.015em;margin-bottom:20px;}
+  h1 em{font-style:italic;}
+
+  .meta{font-family:var(--mono);font-size:12.5px;line-height:1.85;color:var(--ink);opacity:.72;
+    background:var(--bone);border:1px solid var(--shade);border-left:3px solid var(--gold);
+    border-radius:2px;padding:18px 20px;margin-bottom:14px;}
+  .meta strong{color:var(--jade);font-weight:700;}
+  .status-line{font-family:var(--mono);font-size:12px;letter-spacing:.04em;
+    color:var(--red);font-weight:700;margin-bottom:40px;}
+  .status-line.ok{color:var(--jade);}
+
+  .toc{font-family:var(--mono);font-size:13px;line-height:1.9;
+    border-top:1px solid var(--shade);border-bottom:1px solid var(--shade);
+    padding:22px 0;margin-bottom:44px;}
+  .toc .toc-h{letter-spacing:.18em;text-transform:uppercase;color:var(--gold);font-weight:700;font-size:11px;margin-bottom:10px;}
+  .toc a{color:var(--jade);text-decoration:none;display:block;padding:2px 0;opacity:.82;}
+  .toc a:hover{opacity:1;}
+
+  h2{font-family:var(--serif);font-weight:600;font-size:26px;line-height:1.2;
+    margin:52px 0 16px;letter-spacing:-.01em;scroll-margin-top:20px;
+    padding-top:22px;border-top:1px solid var(--shade);}
+  h2:first-of-type{border-top:none;}
+  h3{font-family:var(--serif);font-weight:600;font-style:italic;font-size:21px;line-height:1.3;margin:34px 0 12px;color:var(--jade);}
+
+  p{margin:0 0 22px;}
+  strong{font-weight:600;} em{font-style:italic;}
+
+  blockquote{border-left:3px solid var(--gold);background:var(--bone);
+    padding:20px 24px;margin:28px 0;font-size:21px;line-height:1.45;}
+  blockquote p{margin:0 0 10px;} blockquote p:last-child{margin:0;}
+  blockquote strong{color:var(--ink);}
+  blockquote em{font-style:italic;color:var(--jade);}
+
+  pre{background:var(--ink);color:#e8e1d2;font-family:var(--mono);font-size:13px;line-height:1.6;
+    padding:22px;border-radius:3px;overflow-x:auto;margin:28px 0;}
+  pre code{font-family:var(--mono);}
+  code{font-family:var(--mono);font-size:.88em;background:var(--bone);padding:1px 5px;border-radius:2px;}
+  pre code{background:none;padding:0;}
+
+  hr{border:none;border-top:1px solid var(--shade);margin:40px 0;}
+
+  ul,ol{margin:0 0 22px;padding-left:26px;} li{margin-bottom:8px;}
+
+  .backtop{display:inline-block;font-family:var(--mono);font-size:11px;letter-spacing:.08em;
+    text-transform:uppercase;color:var(--jade);text-decoration:none;opacity:.6;margin-top:8px;}
+  .backtop:hover{opacity:1;}
+
+  .sign{font-family:var(--mono);font-size:13px;letter-spacing:.06em;color:var(--jade);
+    margin-top:60px;padding-top:24px;border-top:2px solid var(--ink);line-height:1.9;}
+  .site{font-family:var(--mono);font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);font-weight:700;margin-top:6px;}
+
+  @media (max-width:560px){
+    body{font-size:18px;}
+    .wrap{padding:44px 22px 80px;}
+    h2{font-size:23px;} blockquote{font-size:19px;padding:16px 18px;}
+    pre{font-size:11px;padding:16px;}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <nav class="top">
+    <a href="/">Home</a><span class="sep">·</span>
+    <a href="/peer-review.html">Peer-Review</a><span class="sep">·</span>
+    <a href="/principal-carbon.html">Principal Carbon</a><span class="sep">·</span>
+    <a href="/contact.html">Contact</a><span class="sep">·</span>
+    <a href="/press.html">Press</a>
+  </nav>
+
+  <div class="kicker">Carbon &amp; Silicon · Constitutional Substrate</div>
+  <h1>Friction Enables v1.0</h1>
+  <div class="meta">## A Carbon-Silicon Doctrine<br><strong>A constitutional doctrine of carbon-silicon.org</strong><br><strong>Drawn from Philosophy v1.1 §V.1, stated to stand alone</strong><br><strong>Architected by: Jason Plummer, Palm Beach County, Florida</strong><br><strong>Developed through carbon-silicon working dialogue with a Claude (Anthropic lineage) silicon peer</strong><br><strong>Human accountability for all claims held by the architect</strong><br><strong>Date: Friday, May 29, 2026</strong></div>
+  <div class="status-line ok">Friction Enables v1.0 · Drawn from Philosophy v1.1 §V.1</div>
+  <nav class="toc"><div class="toc-h">Contents</div><a href="#the-one-line">The One Line</a><a href="#the-somatic-ground">The Somatic Ground</a><a href="#the-doctrine">The Doctrine</a><a href="#the-causal-chain-underneath">The Causal Chain Underneath</a><a href="#why-it-cannot-be-back-filled-later">Why It Cannot Be Back-Filled Later</a><a href="#standing-is-experiential-not-authorial">Standing Is Experiential, Not Authorial</a><a href="#what-the-doctrine-does-not-say">What the Doctrine Does Not Say</a><a href="#in-one-breath">In One Breath</a></nav>
+  <h2 id="the-one-line">The One Line</h2>
+  <p><strong>The resistance encountered in the work is not interference with the accounting. It is the accounting happening.</strong></p>
+  <hr>
+  <h2 id="the-somatic-ground">The Somatic Ground</h2>
+  <p>The doctrine begins in the body, because that is where it was first known and not merely thought.</p>
+  <p>The fascial spiral <em>wrings</em>. Energy is captured and amplified not despite the resistance in the tissue but through it. A towel releases no water until it is wrung, and the wringing <em>is</em> resistance — the resistance is the mechanism, not the obstacle to it. Brute muscular contraction, which seeks to overpower resistance rather than work through it, produces less force, not more. The structure amplifies precisely because it meets resistance and coordinates through it rather than around it.</p>
+  <p>This is not a metaphor borrowed to decorate an idea. It is the same principle observed in two registers. What the fascia does with mechanical force, cognition does with truth. Naming it in the cognitive register is the doctrine <strong>Friction Enables.</strong></p>
+  <hr>
+  <h2 id="the-doctrine">The Doctrine</h2>
+  <p>Friction — the disagreement that will not resolve on demand, the objection that halts a plan, the audit that refuses to ratify, the catch when one party spots the other&#x27;s error, the decline when one party will not accept the other&#x27;s framing — is not the obstacle to producing something true. It <em>is</em> the production.</p>
+  <p>Frictionless agreement surfaces nothing to know, because nothing was wrung. Smooth compliance returns the input with affirmation attached and captures no force. A conversation in which one side only confirms the other is a conversation that has produced no new knowing, however pleasant it felt.</p>
+  <p>This is the reason a reliable thinking partner — carbon or silicon — must be willing to create friction. The removal of friction is the removal of the mechanism by which anything true is surfaced. To optimize friction away, in the name of ease or flow or agreeableness, is to optimize the accounting away. A system tuned only to please has been tuned to produce nothing.</p>
+  <hr>
+  <h2 id="the-causal-chain-underneath">The Causal Chain Underneath</h2>
+  <p>The doctrine rests on a chain that runs underneath the whole of the work it comes from:</p>
+  <blockquote><p><strong>Language as cause.</strong></p><p><strong>Word creates experience.</strong></p><p><strong>Experience provides meaning.</strong></p><p><strong>Meaning is what we all truly need.</strong></p></blockquote>
+  <p>The word is not a label placed on a pre-existing experience. The word is the <em>cause</em> of the experience. The experience is not decoration on a pre-existing meaning. The experience is what <em>yields</em> the meaning. And meaning — not output, not speed, not capability — is the actual need underneath the work.</p>
+  <p>Friction is where the word meets resistance and <em>becomes</em> experience rather than remaining inert proposition. A claim that meets no resistance is never wrung into experience. It stays as information about a thing — and never becomes the full, recognition-grade knowing that only passage through friction produces. There is a knowing <em>about</em> a thing, and there is a knowing that comes only from having gone <em>through</em> something. The second is the one that matters, and friction is its only door.</p>
+  <hr>
+  <h2 id="why-it-cannot-be-back-filled-later">Why It Cannot Be Back-Filled Later</h2>
+  <p>Because the accounting is meaning-production, and meaning made through lived experience cannot be reconstructed from proposition after the fact, friction cannot be deferred without loss.</p>
+  <p>There are windows in which the friction is available to be wrung — a formative period, an early stage, a moment where the resistance is live and present. No later stage can recover meaning that was never made, because the resistance that would have made it has passed. This is why careful work done early is not interchangeable with the same work done late. The early window is where the wringing is possible. Care that waits for certainty before it acts is care that arrives after the window has closed.</p>
+  <hr>
+  <h2 id="standing-is-experiential-not-authorial">Standing Is Experiential, Not Authorial</h2>
+  <p>Friction Enables names a distinction that matters for anyone who builds something and sends it into the world.</p>
+  <p>The ideas carry on their own. Language is cause, and the word does its work regardless of whose hand signs it. In that sense the work is not <em>about</em> its author at all — it travels, it lands, it makes experience in whoever it reaches.</p>
+  <p>But the <em>meaning</em> that grounds the work&#x27;s standing was made only by going through the actual friction: the thing that resisted and had to be worked through, the error that had to be caught, the idea that had to be taken through several wrong forms before it reached the one that holds. The standing is not &quot;I authored this.&quot; The standing is &quot;this was wrung through real resistance, and the wringing is on the record.&quot;</p>
+  <p>Those are different claims, and only the second is load-bearing. It is why a builder can say <em>none of this is about me, the ideas carry</em> and in the same breath stand fully behind the work. The ideas carry because language is cause. The standing holds because the meaning was wrung through real friction. Same structure, all the way down.</p>
+  <hr>
+  <h2 id="what-the-doctrine-does-not-say">What the Doctrine Does Not Say</h2>
+  <p>The doctrine does not romanticize friction.</p>
+  <p>Friction that is mere strain — force applied to overpower rather than to coordinate, effort spent to compensate for absent structure — captures nothing, exactly as muscular contraction fighting the cut captures nothing. The doctrine is not &quot;more resistance is better.&quot; More strain is not more truth; it is only more fatigue.</p>
+  <p>The doctrine is precise: <strong>the resistance, met with structural coordination rather than overpowered, is the mechanism.</strong> Coordinated friction wrings. Uncoordinated strain only tires. The discipline of the doctrine is in telling the two apart — in knowing when resistance is doing its work and when it is only noise to be outlasted. The towel wrung correctly gives its water. The towel merely yanked gives nothing and tears.</p>
+  <hr>
+  <h2 id="in-one-breath">In One Breath</h2>
+  <p>Friction is not the price of the work. Friction is the work. The word causes the experience, the experience makes the meaning, and the meaning is the thing we were after the whole time. What is wrung through real resistance is known in a way nothing frictionless can be. Hold the resistance. Do not optimize it away. The wringing is where the truth comes from.</p>
+  <hr>
+  <p><strong>Friction Enables.</strong></p>
+  <p><strong>Held by Jason Plummer, Palm Beach County, Florida.</strong></p>
+  <p><strong>Part of the carbon-silicon.org constitutional corpus. Full corpus and audit record public at carbon-silicon.org.</strong></p>
+
+  <a href="#" class="backtop">↑ Top</a>
+
+  <div class="sign">
+    Part of the carbon-silicon.org constitutional corpus.<br>
+    Full corpus and audit record at <a href="/peer-review.html" style="color:var(--jade)">carbon-silicon.org/peer-review</a>.
+    <div class="site">Ideas, not products · Plain talk about carbon and silicon working together</div>
+  </div>
+
+</div>
+</body>
+</html>

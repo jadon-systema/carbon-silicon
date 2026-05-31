@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact — carbon-silicon.org</title>
+<meta name="description" content="Plain talk about carbon and silicon working together. This reaches the one holding the wheel.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#1a1a17; --paper:#FBF7EF; --bone:#F4EFE6; --shade:#E8E1D2;
+    --red:#B8312F; --jade:#2C5F4F; --gold:#9c7e3a;
+    --serif:"Newsreader",Georgia,serif;
+    --mono:"JetBrains Mono",ui-monospace,monospace;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{-webkit-text-size-adjust:100%;}
+  body{
+    background:var(--paper);color:var(--ink);font-family:var(--serif);
+    line-height:1.65;font-size:21px;
+    background-image:radial-gradient(circle at 50% -10%, rgba(156,126,58,.07), transparent 45%);
+  }
+  .wrap{max-width:660px;margin:0 auto;padding:64px 26px 100px;}
+
+  nav.top{font-family:var(--mono);font-size:12px;letter-spacing:.16em;text-transform:uppercase;
+    font-weight:700;display:flex;gap:18px;align-items:center;
+    padding-bottom:28px;margin-bottom:34px;border-bottom:1px solid var(--shade);}
+  nav.top a{color:var(--jade);text-decoration:none;opacity:.72;}
+  nav.top a:hover,nav.top a:focus{opacity:1;}
+  nav.top a[aria-current]{color:var(--ink);opacity:1;}
+  nav.top .sep{color:var(--gold);opacity:.55;}
+
+  .kicker{font-family:var(--mono);font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--jade);font-weight:700;margin-bottom:30px;}
+  h1{font-weight:500;font-size:clamp(32px,6vw,46px);line-height:1.1;letter-spacing:-.015em;margin-bottom:14px;}
+  h1 em{font-style:italic;}
+  .sub{font-size:clamp(19px,3vw,23px);line-height:1.4;color:var(--jade);font-style:italic;margin-bottom:46px;}
+
+  p{margin:0 0 24px;}
+  strong{font-weight:600;} em{font-style:italic;}
+
+  form{margin-top:8px;}
+  label{display:block;font-family:var(--mono);font-size:12px;letter-spacing:.1em;
+    text-transform:uppercase;color:var(--jade);font-weight:700;margin:26px 0 9px;}
+  input,textarea{
+    width:100%;font-family:var(--serif);font-size:19px;line-height:1.5;color:var(--ink);
+    background:var(--bone);border:1px solid var(--shade);border-radius:2px;padding:13px 14px;
+  }
+  input:focus,textarea:focus{outline:none;border-color:var(--jade);box-shadow:0 0 0 3px rgba(44,95,79,.13);}
+  textarea{min-height:170px;resize:vertical;}
+  .hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden;}
+
+  button{margin-top:34px;font-family:var(--mono);font-size:14px;letter-spacing:.06em;font-weight:700;
+    text-transform:uppercase;color:var(--paper);background:var(--ink);border:1px solid var(--ink);
+    border-radius:2px;padding:15px 30px;cursor:pointer;transition:background .15s,border-color .15s;}
+  button:hover,button:focus{background:var(--jade);border-color:var(--jade);}
+  button:disabled{opacity:.5;cursor:default;}
+
+  .status{margin-top:22px;font-family:var(--mono);font-size:14px;line-height:1.6;min-height:22px;}
+  .status.ok{color:var(--jade);} .status.err{color:var(--red);}
+
+  .fallback{font-family:var(--mono);font-size:13px;line-height:1.8;color:var(--ink);opacity:.6;
+    margin-top:40px;padding-top:24px;border-top:1px solid var(--shade);}
+  .fallback a{color:var(--jade);}
+
+  .sign{font-family:var(--mono);font-size:14px;letter-spacing:.06em;color:var(--jade);
+    margin-top:54px;padding-top:24px;border-top:2px solid var(--ink);line-height:1.9;}
+  .site{font-family:var(--mono);font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);font-weight:700;margin-top:6px;}
+
+  @media (max-width:560px){
+    body{font-size:19px;}
+    .wrap{padding:44px 22px 80px;}
+    input,textarea{font-size:17px;}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <nav class="top">
+    <a href="/">Home</a><span class="sep">·</span>
+    <a href="/peer-review.html">Peer-Review</a><span class="sep">·</span>
+    <a href="/principal-carbon.html">Principal Carbon</a><span class="sep">·</span>
+    <a href="/contact.html" aria-current="page">Contact</a><span class="sep">·</span>
+    <a href="/press.html">Press</a>
+  </nav>
+
+  <div class="kicker">Carbon &amp; Silicon · Plain Talk</div>
+  <h1>Say it <em>straight.</em></h1>
+  <div class="sub">No funnel. No autoresponder pretending to be a person. This reaches the one holding the wheel.</div>
+
+  <p>If you build with these ideas, disagree with them, or want to put them to work in your own trade — write. Plain language is fine. It's the only kind used here.</p>
+
+  <form id="contact-form" novalidate>
+    <label for="name">Name</label>
+    <input id="name" name="name" type="text" autocomplete="name" required>
+
+    <label for="email">Email</label>
+    <input id="email" name="email" type="email" autocomplete="email" required>
+
+    <label for="message">What's on your mind</label>
+    <textarea id="message" name="message" required></textarea>
+
+    <div class="hp" aria-hidden="true">
+      <label for="company">Company</label>
+      <input id="company" name="company" type="text" tabindex="-1" autocomplete="off">
+    </div>
+
+    <button type="submit" id="submit-btn">Send it</button>
+    <div class="status" id="status" role="status" aria-live="polite"></div>
+  </form>
+
+  <p class="fallback">
+    Form not loading, or prefer your own mail client?<br>
+    Write directly: <a href="mailto:hello@carbon-silicon.org?subject=carbon-silicon.org">hello@carbon-silicon.org</a>
+  </p>
+
+  <div class="sign">
+    Written plainly, on purpose, for the people who get reached last and burned first.
+    <div class="site">Ideas, not products · Plain talk about carbon and silicon working together</div>
+  </div>
+
+</div>
+
+<script>
+(function(){
+  var form = document.getElementById('contact-form');
+  var btn  = document.getElementById('submit-btn');
+  var statusEl = document.getElementById('status');
+
+  function setStatus(msg, kind){
+    statusEl.textContent = msg;
+    statusEl.className = 'status' + (kind ? ' ' + kind : '');
+  }
+
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    setStatus('');
+
+    if (form.company.value.trim() !== '') { setStatus('Sent.', 'ok'); form.reset(); return; }
+
+    var name = form.name.value.trim();
+    var email = form.email.value.trim();
+    var message = form.message.value.trim();
+
+    if (!name || !email || !message) { setStatus('All three fields are needed.', 'err'); return; }
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { setStatus('That email address looks off.', 'err'); return; }
+
+    btn.disabled = true;
+    setStatus('Sending…');
+
+    fetch('/api/contact', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ name: name, email: email, message: message })
+    })
+    .then(function(res){
+      if (!res.ok) throw new Error('HTTP ' + res.status);
+      return res.json().catch(function(){ return {}; });
+    })
+    .then(function(){
+      setStatus("Sent. It reaches a person, not a queue. You'll hear back.", 'ok');
+      form.reset();
+    })
+    .catch(function(){
+      btn.disabled = false;
+      setStatus('Send failed. Use the direct email below and it gets there just the same.', 'err');
+    });
+  });
+})();
+</script>
+</body>
+</html>

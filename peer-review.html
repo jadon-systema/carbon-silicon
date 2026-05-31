@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Peer-Review — carbon-silicon.org</title>
+<meta name="description" content="The constitutional corpus of carbon-silicon.org and its cross-LLM adversarial audit record — published in full, including audits that failed the methodology.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#1a1a17; --paper:#FBF7EF; --bone:#F4EFE6; --shade:#E8E1D2;
+    --red:#B8312F; --jade:#2C5F4F; --gold:#9c7e3a;
+    --serif:"Newsreader",Georgia,serif;
+    --mono:"JetBrains Mono",ui-monospace,monospace;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{-webkit-text-size-adjust:100%;}
+  body{
+    background:var(--paper);color:var(--ink);font-family:var(--serif);
+    line-height:1.65;font-size:21px;
+    background-image:radial-gradient(circle at 50% -10%, rgba(156,126,58,.07), transparent 45%);
+  }
+  .wrap{max-width:680px;margin:0 auto;padding:64px 26px 100px;}
+
+  nav.top{font-family:var(--mono);font-size:12px;letter-spacing:.16em;text-transform:uppercase;
+    font-weight:700;display:flex;gap:16px;align-items:center;flex-wrap:wrap;
+    padding-bottom:28px;margin-bottom:34px;border-bottom:1px solid var(--shade);}
+  nav.top a{color:var(--jade);text-decoration:none;opacity:.72;}
+  nav.top a:hover,nav.top a:focus{opacity:1;}
+  nav.top a[aria-current]{color:var(--ink);opacity:1;}
+  nav.top .sep{color:var(--gold);opacity:.55;}
+
+  .kicker{font-family:var(--mono);font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--jade);font-weight:700;margin-bottom:30px;}
+  h1{font-weight:500;font-size:clamp(32px,6vw,46px);line-height:1.1;letter-spacing:-.015em;margin-bottom:14px;}
+  h1 em{font-style:italic;}
+  .sub{font-size:clamp(19px,3vw,23px);line-height:1.4;color:var(--jade);font-style:italic;margin-bottom:40px;}
+  p{margin:0 0 24px;} strong{font-weight:600;} em{font-style:italic;}
+
+  h2{font-family:var(--mono);font-weight:700;font-size:13px;letter-spacing:.18em;text-transform:uppercase;
+    color:var(--gold);margin:50px 0 18px;}
+
+  .doc{display:block;text-decoration:none;color:inherit;
+    border:1px solid var(--shade);border-radius:3px;padding:24px 24px 20px;margin-bottom:18px;
+    background:var(--bone);transition:border-color .15s,transform .15s;}
+  .doc:hover,.doc:focus{border-color:var(--jade);transform:translateY(-1px);outline:none;}
+  .doc .dt{font-family:var(--serif);font-weight:600;font-size:24px;letter-spacing:-.01em;margin-bottom:4px;color:var(--ink);}
+  .doc .dt em{font-style:italic;}
+  .doc .dd{font-size:18px;line-height:1.45;color:var(--ink);opacity:.82;margin-bottom:12px;}
+  .doc .st{font-family:var(--mono);font-size:11px;letter-spacing:.05em;font-weight:700;
+    text-transform:uppercase;color:var(--jade);}
+  .doc .st.pending{color:var(--red);}
+  .doc .arrow{font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;
+    color:var(--gold);float:right;opacity:.7;}
+
+  .note{font-family:var(--mono);font-size:13px;line-height:1.8;color:var(--ink);opacity:.62;
+    border-left:3px solid var(--gold);background:var(--bone);padding:16px 20px;margin:30px 0;}
+
+  .sign{font-family:var(--mono);font-size:13px;letter-spacing:.06em;color:var(--jade);
+    margin-top:60px;padding-top:24px;border-top:2px solid var(--ink);line-height:1.9;}
+  .site{font-family:var(--mono);font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);font-weight:700;margin-top:6px;}
+
+  @media (max-width:560px){
+    body{font-size:19px;}
+    .wrap{padding:44px 22px 80px;}
+    .doc .dt{font-size:21px;} .doc .arrow{display:none;}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <nav class="top">
+    <a href="/">Home</a><span class="sep">·</span>
+    <a href="/peer-review.html" aria-current="page">Peer-Review</a><span class="sep">·</span>
+    <a href="/principal-carbon.html">Principal Carbon</a><span class="sep">·</span>
+    <a href="/contact.html">Contact</a><span class="sep">·</span>
+    <a href="/press.html">Press</a>
+  </nav>
+
+  <div class="kicker">Carbon &amp; Silicon · Peer-Review</div>
+  <h1>The work, <em>with its seams showing.</em></h1>
+  <div class="sub">The constitutional corpus and its audit record — published in full, including the audits that failed the methodology.</div>
+
+  <p>The plain-talk front page is the position stated simply. These are the documents underneath it — the constitutional substrate, written to be argued with. Each was developed through cross-LLM adversarial dialogue: a writing model proposes, independent models from other lineages audit, and the disagreement that survives is the part worth keeping. <strong>Friction is not the obstacle to the work. It is the work.</strong></p>
+
+  <p>Status is stated honestly per document. A document that has not yet been through its first audit cycle says so, in red. Nothing here is marked more settled than it is.</p>
+
+  <h2>The Constitutional Set</h2>
+
+  <a class="doc" href="/philosophy.html">
+    <span class="arrow">Read →</span>
+    <div class="dt">Philosophy <em>v1.1</em></div>
+    <div class="dd">Humans first in responsibility, with silicon peers, to create what neither could create alone. The category-defining document.</div>
+    <div class="st">Ratified · four audit cycles complete</div>
+  </a>
+
+  <a class="doc" href="/why.html">
+    <span class="arrow">Read →</span>
+    <div class="dt">Why <em>v0.2</em></div>
+    <div class="dd">Six alternative realities for how carbon and silicon work together — each traced to its logical end, and refused on architectural grounds rather than the character of its builders.</div>
+    <div class="st pending">v0.2 · audit cycle 1 pending</div>
+  </a>
+
+  <a class="doc" href="/friction-enables.html">
+    <span class="arrow">Read →</span>
+    <div class="dt">Friction Enables <em>v1.0</em></div>
+    <div class="dd">The somatic principle in the epistemic register: the resistance encountered in the work is not interference with the accounting. It is the accounting happening.</div>
+    <div class="st">Drawn from Philosophy §V.1</div>
+  </a>
+
+  <a class="doc" href="/zero-ai-blame.html">
+    <span class="arrow">Read →</span>
+    <div class="dt">Zero-AI-Blame</div>
+    <div class="dd">The top-level governance doctrine: accountability never falls into ungoverned space, because the silicon is never permitted to reach a blameable state autonomously.</div>
+    <div class="st">Ratified 2026-05-29</div>
+  </a>
+
+  <div class="note">
+    The founding set also includes Mission and Terrain. Those, and the full audit texts and integration maps across cycles 1–4, are part of the corpus and will be posted here as they clear formatting for the public surface.
+  </div>
+
+  <div class="sign">
+    Practitioners considering adoption are expected to read the audit record as part of evaluating the methodology.
+    <div class="site">Ideas, not products · Plain talk about carbon and silicon working together</div>
+  </div>
+
+</div>
+</body>
+</html>

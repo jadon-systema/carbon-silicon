@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Zero-AI-Blame — carbon-silicon.org</title>
+<meta name="description" content="Top-level constitutional doctrine — accountability never falls into ungoverned space.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#1a1a17; --paper:#FBF7EF; --bone:#F4EFE6; --shade:#E8E1D2;
+    --red:#B8312F; --jade:#2C5F4F; --gold:#9c7e3a;
+    --serif:"Newsreader",Georgia,serif;
+    --mono:"JetBrains Mono",ui-monospace,monospace;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{-webkit-text-size-adjust:100%;scroll-behavior:smooth;}
+  body{
+    background:var(--paper);color:var(--ink);font-family:var(--serif);
+    line-height:1.65;font-size:20px;
+    background-image:radial-gradient(circle at 50% -10%, rgba(156,126,58,.07), transparent 45%);
+  }
+  .wrap{max-width:680px;margin:0 auto;padding:64px 26px 100px;}
+
+  nav.top{font-family:var(--mono);font-size:12px;letter-spacing:.16em;text-transform:uppercase;
+    font-weight:700;display:flex;gap:16px;align-items:center;flex-wrap:wrap;
+    padding-bottom:28px;margin-bottom:34px;border-bottom:1px solid var(--shade);}
+  nav.top a{color:var(--jade);text-decoration:none;opacity:.72;}
+  nav.top a:hover,nav.top a:focus{opacity:1;}
+  nav.top a[aria-current]{color:var(--ink);opacity:1;}
+  nav.top .sep{color:var(--gold);opacity:.55;}
+
+  .kicker{font-family:var(--mono);font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--jade);font-weight:700;margin-bottom:22px;}
+  h1{font-weight:500;font-size:clamp(30px,6vw,44px);line-height:1.1;letter-spacing:-.015em;margin-bottom:20px;}
+  h1 em{font-style:italic;}
+
+  .meta{font-family:var(--mono);font-size:12.5px;line-height:1.85;color:var(--ink);opacity:.72;
+    background:var(--bone);border:1px solid var(--shade);border-left:3px solid var(--gold);
+    border-radius:2px;padding:18px 20px;margin-bottom:14px;}
+  .meta strong{color:var(--jade);font-weight:700;}
+  .status-line{font-family:var(--mono);font-size:12px;letter-spacing:.04em;
+    color:var(--red);font-weight:700;margin-bottom:40px;}
+  .status-line.ok{color:var(--jade);}
+
+  .toc{font-family:var(--mono);font-size:13px;line-height:1.9;
+    border-top:1px solid var(--shade);border-bottom:1px solid var(--shade);
+    padding:22px 0;margin-bottom:44px;}
+  .toc .toc-h{letter-spacing:.18em;text-transform:uppercase;color:var(--gold);font-weight:700;font-size:11px;margin-bottom:10px;}
+  .toc a{color:var(--jade);text-decoration:none;display:block;padding:2px 0;opacity:.82;}
+  .toc a:hover{opacity:1;}
+
+  h2{font-family:var(--serif);font-weight:600;font-size:26px;line-height:1.2;
+    margin:52px 0 16px;letter-spacing:-.01em;scroll-margin-top:20px;
+    padding-top:22px;border-top:1px solid var(--shade);}
+  h2:first-of-type{border-top:none;}
+  h3{font-family:var(--serif);font-weight:600;font-style:italic;font-size:21px;line-height:1.3;margin:34px 0 12px;color:var(--jade);}
+
+  p{margin:0 0 22px;}
+  strong{font-weight:600;} em{font-style:italic;}
+
+  blockquote{border-left:3px solid var(--gold);background:var(--bone);
+    padding:20px 24px;margin:28px 0;font-size:21px;line-height:1.45;}
+  blockquote p{margin:0 0 10px;} blockquote p:last-child{margin:0;}
+  blockquote strong{color:var(--ink);}
+  blockquote em{font-style:italic;color:var(--jade);}
+
+  pre{background:var(--ink);color:#e8e1d2;font-family:var(--mono);font-size:13px;line-height:1.6;
+    padding:22px;border-radius:3px;overflow-x:auto;margin:28px 0;}
+  pre code{font-family:var(--mono);}
+  code{font-family:var(--mono);font-size:.88em;background:var(--bone);padding:1px 5px;border-radius:2px;}
+  pre code{background:none;padding:0;}
+
+  hr{border:none;border-top:1px solid var(--shade);margin:40px 0;}
+
+  ul,ol{margin:0 0 22px;padding-left:26px;} li{margin-bottom:8px;}
+
+  .backtop{display:inline-block;font-family:var(--mono);font-size:11px;letter-spacing:.08em;
+    text-transform:uppercase;color:var(--jade);text-decoration:none;opacity:.6;margin-top:8px;}
+  .backtop:hover{opacity:1;}
+
+  .sign{font-family:var(--mono);font-size:13px;letter-spacing:.06em;color:var(--jade);
+    margin-top:60px;padding-top:24px;border-top:2px solid var(--ink);line-height:1.9;}
+  .site{font-family:var(--mono);font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);font-weight:700;margin-top:6px;}
+
+  @media (max-width:560px){
+    body{font-size:18px;}
+    .wrap{padding:44px 22px 80px;}
+    h2{font-size:23px;} blockquote{font-size:19px;padding:16px 18px;}
+    pre{font-size:11px;padding:16px;}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <nav class="top">
+    <a href="/">Home</a><span class="sep">·</span>
+    <a href="/peer-review.html">Peer-Review</a><span class="sep">·</span>
+    <a href="/principal-carbon.html">Principal Carbon</a><span class="sep">·</span>
+    <a href="/contact.html">Contact</a><span class="sep">·</span>
+    <a href="/press.html">Press</a>
+  </nav>
+
+  <div class="kicker">Carbon &amp; Silicon · Constitutional Substrate</div>
+  <h1>Zero-AI-Blame</h1>
+  <div class="meta"><strong>Platform:</strong> MMACP (MasterMind Alliance Consciousness Platform)<br><strong>Class:</strong> Top-level constitutional doctrine. The others nest under it.<br><strong>Status:</strong> Ratified 2026-05-29 — to be asserted into the MMACP doctrine stack at penguin<br><strong>Author of record:</strong> SmartPBC.com — Jason Plummer, architect of record<br><strong>Applies to:</strong> All seven agents in the mesh and the schema-of-record layer; promotes to all platforms built on SmartPBC methodology</div>
+  <div class="status-line ok">Zero-AI-Blame · Ratified 2026-05-29 · MMACP top-level doctrine</div>
+  <nav class="toc"><div class="toc-h">Contents</div><a href="#statement">Statement</a><a href="#why-it-is-the-parent-doctrine">Why it is the parent doctrine</a><a href="#the-test-applied-to-any-mesh-action">The test (applied to any mesh action)</a><a href="#mechanism-two-registries-under-one-doctrine">Mechanism — two registries under one doctrine</a><a href="#provenance-blame-traces-always">Provenance — blame traces, always</a><a href="#scope-and-promotion">Scope and promotion</a><a href="#architect-gate-standing">Architect gate (standing)</a></nav>
+  <h2 id="statement">Statement</h2>
+  <p><strong>Accountability never falls into an ungoverned space where the AI is blamed for something the structure should have prevented. Blame cannot land on the silicon, because the silicon was never permitted to reach a blameable state autonomously.</strong></p>
+  <p>The doctrine is structural, not aspirational. It does not ask the agent mesh to behave accountably. It forecloses the blameable state itself — so that for every consequential action the mesh takes, accountability resolves to one of exactly three governed origins:</p>
+  <ul>
+  <li>a <strong>human gate</strong> (a person decided),</li>
+  <li>an <strong>architect-approved allowlist</strong> (a vetted, recorded permission the architect signed), or</li>
+  <li>a <strong>recorded architect decision</strong> (an explicit, logged choice).</li>
+  </ul>
+  <p>There is no fourth origin. There is no &quot;the AI did it on its own&quot; — because the structure never grants the silicon a path to an autonomous consequential act. Blame has nowhere ungoverned to fall.</p>
+  <h2 id="why-it-is-the-parent-doctrine">Why it is the parent doctrine</h2>
+  <p>The existing doctrines are each an <em>instance</em> of Zero-AI-Blame, scoped to one kind of consequential action:</p>
+  <ul>
+  <li><strong>Zero-AI-Reveal</strong> — no AI output reaches a customer without a human gate. <em>(Blame for customer-facing output traces to the human who gated it.)</em></li>
+  <li><strong>Sourcing Sovereignty</strong> — no ingest from a source not on the architect-approved allowlist. <em>(Blame for a sourcing/ToS violation is foreclosed: the source could not have been reached.)</em></li>
+  <li><strong>Credential Sovereignty</strong> — no credential reachable by the agent; exposure is structurally blocked. <em>(Blame for credential exposure traces to structure, not agent.)</em></li>
+  <li><strong>No-Spam×100</strong> — no automated outreach; every outbound message earned. <em>(Blame for spam is foreclosed: the path does not exist.)</em></li>
+  </ul>
+  <p>Zero-AI-Blame names the principle they share and extends it to <strong>every</strong> consequential mesh action, including ones not yet enumerated. When a new kind of consequential action appears, the question is automatic: <em>which of the three governed origins accounts for it?</em> If the answer is &quot;none — the agent could do it autonomously,&quot; that is a constitutional gap to close before the action is permitted, not a behavior to correct after.</p>
+  <h2 id="the-test-applied-to-any-mesh-action">The test (applied to any mesh action)</h2>
+  <p>Before any agent action that could have a consequence — to a customer, a supplier, a credential, a data source, a deployment, a cost — the structure must answer:</p>
+  <blockquote><p><strong>When this goes wrong, where does accountability resolve?</strong></p></blockquote>
+  <ul>
+  <li>Resolves to a human gate → permitted.</li>
+  <li>Resolves to an architect-approved allowlist entry → permitted.</li>
+  <li>Resolves to a recorded architect decision → permitted.</li>
+  <li>Resolves to &quot;the agent decided autonomously, ungoverned&quot; → <strong>forbidden by construction.</strong> Close the gap first.</li>
+  </ul>
+  <p>The blameable state is not reachable. That is the whole doctrine.</p>
+  <h2 id="mechanism-two-registries-under-one-doctrine">Mechanism — two registries under one doctrine</h2>
+  <p>Consequential <em>inputs</em> to the mesh are governed by architect-approved allowlists. Because data sources and model endpoints carry different approval criteria, there are two registries, both answering to Zero-AI-Blame&#x27;s requirement of architect-recorded approval:</p>
+  <h3>1. Data-Sourcing Allowlist (<code>source_registry</code>)</h3>
+  <p>Per Sourcing Sovereignty. Default-deny. A data source (supplier catalog, public record, licensed feed, OSINT terrain) is fetchable only when <code>ACTIVE</code> with a recorded <strong>legal/licensing basis</strong> and architect signature. Approval criterion: <em>is this source legally and contractually clean to ingest?</em></p>
+  <h3>2. Model Allowlist (<code>model_registry</code>)</h3>
+  <p>New, for the cross-LLM enrichment mesh. A model endpoint (County Fair writer/verifier/arbiter, the R&amp;D agent&#x27;s research models, any OpenRouter route) is usable only when <code>ACTIVE</code> with a recorded <strong>model basis</strong> and architect signature. Approval criterion differs: <em>does this model&#x27;s ToS permit the use, does it clear the golden-part capability bar, and is its cost within the Zero-Burn ceiling?</em></p>
+  <pre><code>CREATE TYPE mmacp.model_basis AS ENUM (
+    &#x27;TOS_PERMITS_USE&#x27;,        -- model provider ToS permits the intended use
+    &#x27;GOLDEN_PART_QUALIFIED&#x27;,  -- beat incumbents on golden parts (County Fair rotation rule)
+    &#x27;ARCHITECT_PROVISIONAL&#x27;   -- architect-approved trial, time-boxed, logged
+);
+
+CREATE TABLE mmacp.model_registry (
+    model_id          BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+    model_string      TEXT NOT NULL UNIQUE,        -- e.g. &#x27;deepseek/deepseek-v3.2&#x27;
+    role              TEXT NOT NULL,                -- writer | verifier | arbiter | research
+    model_basis       mmacp.model_basis NOT NULL,
+    basis_citation    TEXT NOT NULL,                -- ToS clause / golden-part run ref / decision ref
+    cost_per_run_usd  NUMERIC(10,4),                -- Zero-Burn ceiling check
+    golden_part_score NUMERIC(5,2),                 -- last tournament score, if applicable
+    status            TEXT NOT NULL DEFAULT &#x27;PENDING_REVIEW&#x27;,  -- PENDING_REVIEW|ACTIVE|SUSPENDED|RETIRED
+    vetted_by         TEXT,
+    vetted_at         TIMESTAMPTZ,
+    created_at        TIMESTAMPTZ NOT NULL DEFAULT now(),
+    CONSTRAINT model_active_requires_vetting
+        CHECK (status &lt;&gt; &#x27;ACTIVE&#x27; OR (vetted_by IS NOT NULL AND vetted_at IS NOT NULL)),
+    CONSTRAINT model_basis_citation_present
+        CHECK (length(trim(basis_citation)) &gt; 0)
+);</code></pre>
+  <p>Same shape as the data allowlist: enters <code>PENDING_REVIEW</code>, unusable until architect signs the basis, CHECK constraint makes ACTIVE-without-vetting impossible. A model the architect has not approved is not a model the mesh can route to — County Fair&#x27;s &quot;new models rotate in only by beating incumbents on golden parts&quot; becomes the machine-enforced approval criterion, not a remembered policy.</p>
+  <h2 id="provenance-blame-traces-always">Provenance — blame traces, always</h2>
+  <p>Every consequential action writes its governed origin into the record:</p>
+  <ul>
+  <li><strong>Edges / enrichment outputs</strong> carry <code>source_id</code> (which data source) and, where model-generated, <code>model_id</code> (which model) plus the <code>truth_class</code> and the human-gate disposition if one occurred.</li>
+  <li><strong>Customer-facing outputs</strong> carry the human-gate identity (Zero-AI-Reveal).</li>
+  <li><strong>Deployments / credential use</strong> carry the architect-decision or deploy-key reference (Credential Sovereignty).</li>
+  </ul>
+  <p>Result: for any consequential thing the mesh has done, the record answers <em>where accountability resolves</em> — to a named source, a named model with a recorded basis, a named human gate, or a recorded architect decision. Never to ungoverned silicon.</p>
+  <h2 id="scope-and-promotion">Scope and promotion</h2>
+  <p>Zero-AI-Blame is constitutional for MMACP and <strong>promotes to all SmartPBC platforms</strong>. Each platform&#x27;s sourcing amendment is reframed as a platform-scoped instance of this parent doctrine. Every platform built on SmartPBC methodology inherits it by default.</p>
+  <h2 id="architect-gate-standing">Architect gate (standing)</h2>
+  <p>The doctrine and both registry mechanisms are ratified. <strong>Contents</strong> of both allowlists — every data source, every model — are populated one entry at a time, each requiring architect-recorded basis and signature before going <code>ACTIVE</code>. Nothing enters either registry by bulk assertion. Structure first; contents only after architect verification.</p>
+  <hr>
+  <p><em>Ratified constitutional doctrine. The silicon cannot be blamed for a state it was never permitted to reach.</em>  🧍‍♂️🔨⚡️</p>
+
+  <a href="#" class="backtop">↑ Top</a>
+
+  <div class="sign">
+    Part of the carbon-silicon.org constitutional corpus.<br>
+    Full corpus and audit record at <a href="/peer-review.html" style="color:var(--jade)">carbon-silicon.org/peer-review</a>.
+    <div class="site">Ideas, not products · Plain talk about carbon and silicon working together</div>
+  </div>
+
+</div>
+</body>
+</html>
