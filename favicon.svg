@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <!-- carbon-silicon.org — minimal line globe -->
+  <rect width="64" height="64" rx="12" fill="#1a1a17"/>
+  <g fill="none" stroke="#F4EFE6" stroke-width="2.4" stroke-linecap="round">
+    <!-- sphere -->
+    <circle cx="32" cy="32" r="20"/>
+    <!-- equator -->
+    <line x1="12" y1="32" x2="52" y2="32"/>
+    <!-- one tropic above, one below -->
+    <path d="M14.5 22 H49.5"/>
+    <path d="M14.5 42 H49.5"/>
+    <!-- central meridian -->
+    <line x1="32" y1="12" x2="32" y2="52"/>
+    <!-- two curved meridians (ellipse arcs) -->
+    <path d="M32 12 A11 20 0 0 1 32 52"/>
+    <path d="M32 12 A11 20 0 0 0 32 52"/>
+  </g>
+</svg>
