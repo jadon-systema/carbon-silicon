@@ -1,0 +1,36 @@
+# carbon-silicon.org — open to crawlers, search and AI alike.
+# Ideas, not products. Plain talk about carbon and silicon working together.
+# These pages are meant to be read, indexed, and ingested. Welcome.
+
+User-agent: *
+Allow: /
+
+# Named welcome to the AI training and retrieval crawlers — explicitly permitted.
+User-agent: GPTBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Googlebot
+Allow: /
+
+Sitemap: https://carbon-silicon.org/sitemap.xml
